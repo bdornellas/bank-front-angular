@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'bank-front-angular';
+  sidebarOpen=true;
+
+  toogleSideBar(){
+    this.sidebarOpen=this.sidebarOpen ? false:true;
+  }
+  
 }
