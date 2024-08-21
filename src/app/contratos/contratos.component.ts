@@ -21,14 +21,13 @@ export class ContratosComponent {
 
   constructor(private contratosService:ContratosService){
     this.contratosService.listarContratos().subscribe((dados:Contrato[])=>{
-        console.log("get");
         this.contratos=dados;
-        this.dataSource=new MatTableDataSource(this.contratos);
-        this.dataSource.paginator=this.paginator;
-        this.dataSource.sort=this.sort;
+        this.tabelaContratos=new MatTableDataSource(this.contratos);
+        this.tabelaContratos.paginator=this.paginator;
+        this.tabelaContratos.sort=this.sort;
     })
   }
-    dataSource=new MatTableDataSource(this.contratos);
+    tabelaContratos=new MatTableDataSource(this.contratos);
     displayColumns= ["select","_id", "valor","parcelas","produto","dataInclusao","statusContrato"];
     selection= new SelectionModel(true,[]);
     @ViewChild(MatPaginator) paginator!:  MatPaginator;

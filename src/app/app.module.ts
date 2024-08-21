@@ -10,6 +10,10 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
 import { HttpClientModule } from '@angular/common/http';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatButtonModule} from '@angular/material/button';
+import {MatTooltipModule} from '@angular/material/tooltip';
+
 
 
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -29,7 +33,10 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     MatSidenavModule,
     MatDividerModule,
     MatListModule,
-    HttpClientModule
+    HttpClientModule,
+    MatMenuModule,
+    MatButtonModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]

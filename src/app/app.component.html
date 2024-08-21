@@ -1,7 +1,7 @@
 
   <mat-toolbar color="primary" class="header-toolbar-config">
-    <button mat-icon-button (click)="toogleSideBar()" class="example-icon" aria-label="Example icon-button with menu icon">
-      <mat-icon>menu</mat-icon>
+    <button matTooltip="Menu" mat-icon-button (click)="toogleSideBar()" class="example-icon" aria-label="Menu">
+      <mat-icon >menu</mat-icon>
     </button>
     <span class="app-title">Bruno's Bank</span>
     <span class="header-spacer"></span>
@@ -12,10 +12,29 @@
   <mat-drawer-container class="content-container">
     <mat-drawer mode="side" [opened]="sidebarOpen" class="sidebar">
       <mat-list>
-        <mat-list-item><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon></mat-list-item>
-        <mat-list-item>Contratos</mat-list-item>
-        <mat-list-item>Pagamentos</mat-list-item>
-        <mat-list-item>Solicitações</mat-list-item>
+        <mat-list-item><button mat-button  >
+          <div class="row">
+            Inicio
+          </div>
+        </button></mat-list-item>
+        <mat-list-item>
+          <button mat-button [matMenuTriggerFor]="contratos">Contratos</button>
+<mat-menu #contratos="matMenu">
+  <button mat-menu-item>Solicitar</button>
+  <button mat-menu-item>Ver todos</button>
+</mat-menu>
+</mat-list-item>
+<mat-list-item>
+<button mat-button [matMenuTriggerFor]="pagamentos">Pagamentos</button>
+<mat-menu #pagamentos="matMenu">
+  <button mat-menu-item>Incluir</button>
+  <button mat-menu-item>Ver todos</button>
+</mat-menu>
+
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item><button mat-button color="warn">Logout</button></mat-list-item>
+
       </mat-list>
     </mat-drawer>
     <mat-drawer-content class="main-content">
