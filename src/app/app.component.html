@@ -15,10 +15,15 @@
 
   <mat-drawer-container class="content-container">
     <mat-drawer mode="side" [opened]="sidebarOpen" class="sidebar">
-      Sidebar aqui
+      <mat-list>
+        <mat-list-item>Contratos</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>Pagamentos</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>Solicitações</mat-list-item>
+      </mat-list>
     </mat-drawer>
     <mat-drawer-content class="main-content">
-      <h1>Lista de contratos</h1>
       <router-outlet></router-outlet>
     </mat-drawer-content>
   </mat-drawer-container>
