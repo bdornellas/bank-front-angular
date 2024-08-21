@@ -29,7 +29,7 @@ export class ContratosComponent {
     })
   }
     dataSource=new MatTableDataSource(this.contratos);
-    displayColumns= ["select","_id", "valor","parcelas","produto","dataInclusao"];
+    displayColumns= ["select","_id", "valor","parcelas","produto","dataInclusao","statusContrato"];
     selection= new SelectionModel(true,[]);
     @ViewChild(MatPaginator) paginator!:  MatPaginator;
     @ViewChild(MatSort) sort!: MatSort;

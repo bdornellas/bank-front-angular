@@ -18,7 +18,7 @@ export class ContratosService {
   }
 
   listarContratos(): Observable<Contrato[]>{
-    const url= `${this.API_URL}/list/contratos`;
+    const url= `${this.API_URL}/list/contratos-small`;
     return this.httpClient.get<Contrato[]>(url);
   }
 
