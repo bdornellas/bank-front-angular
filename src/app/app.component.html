@@ -5,23 +5,19 @@
     </button>
     <span class="app-title">Bruno's Bank</span>
     <span class="header-spacer"></span>
-    Olá, Poliana
+    Olá, User {{!isLoggedIn}}
    
   </mat-toolbar>
 
   <mat-drawer-container class="content-container">
     <mat-drawer mode="side" [opened]="sidebarOpen" class="sidebar">
       <mat-list>
-        <mat-list-item><button mat-button  >
-          <div class="row">
-            Inicio
-          </div>
-        </button></mat-list-item>
+        <mat-list-item><a mat-button routerLink="contratos">Inicio</a></mat-list-item>
         <mat-list-item>
-          <button mat-button [matMenuTriggerFor]="contratos">Contratos</button>
+          <a mat-button [matMenuTriggerFor]="contratos">Contratos</a>
 <mat-menu #contratos="matMenu">
-  <button mat-menu-item>Solicitar</button>
-  <button mat-menu-item>Ver todos</button>
+  <button mat-menu-item><a mat-button routerLink="contratos">Solicitar</a></button>
+  <button mat-menu-item><a mat-button routerLink="contratos">Ver todos</a></button>
 </mat-menu>
 </mat-list-item>
 <mat-list-item>
