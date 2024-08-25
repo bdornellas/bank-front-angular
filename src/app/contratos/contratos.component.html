@@ -4,28 +4,28 @@
             Contratos vigentes
         </mat-card-title>
         <mat-card-content>
-    2
+    {{totalContratos}}
         </mat-card-content>
     </mat-card>
     <mat-card class="list-contratos card-info">
         <mat-card-title>
-            Valor total
+            Valor total (em R$)
         </mat-card-title>
         <mat-card-content>
-    R$2567,00
+    {{valorTotal | currency:'R$':true:'2.2-4'}}
         </mat-card-content>
     </mat-card>
     <mat-card class="list-contratos card-info">
         <mat-card-title>
-            Valores pagos
+            Valores pagos (em R$)
         </mat-card-title>
         <mat-card-content>
-            R$0,00
+            A Implementar
         </mat-card-content>
     </mat-card>
     <mat-card class="list-contratos card-info">
         <mat-card-title>
-            Pendências
+            A Implementar
         </mat-card-title>
         <mat-card-content>
             Nenhuma pendência

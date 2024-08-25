@@ -17,14 +17,12 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 
 
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    PageNotFoundComponent,
-    LoginComponent
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

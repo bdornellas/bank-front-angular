@@ -5,7 +5,8 @@
     </button>
     <span class="app-title">Bruno's Bank</span>
     <span class="header-spacer"></span>
-    Olá, User {{!isLoggedIn}}
+    
+    Olá, {{usuario.identificacao}}
    
   </mat-toolbar>
 
@@ -16,7 +17,7 @@
         <mat-list-item>
           <a mat-button [matMenuTriggerFor]="contratos">Contratos</a>
 <mat-menu #contratos="matMenu">
-  <button mat-menu-item><a mat-button routerLink="contratos">Solicitar</a></button>
+  <button mat-menu-item><a mat-button routerLink="contratos/add">Solicitar</a></button>
   <button mat-menu-item><a mat-button routerLink="contratos">Ver todos</a></button>
 </mat-menu>
 </mat-list-item>

@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
-import { Subscription } from 'rxjs';
-import { StorageService } from './services/storage.service';
-import { AuthService } from './services/auth.service';
-import { EventBusService } from './shared/event-bus.service';
+import { UsuarioService } from './services/usuario.service';
+import { Usuario } from './models/usuario';
 
 @Component({
   selector: 'app-root',
@@ -13,46 +11,30 @@ export class AppComponent {
   title = 'bank-front-angular';
   sidebarOpen=true;
   isLoggedIn = false;
-  eventBusSub?: Subscription;
+  usuario!: Usuario;
 
+  constructor(private usuarioService:UsuarioService) {
+    this.usuarioService.validarUsuario("bruno@email.com","12345678").subscribe((dados:Usuario)=>{
+      this.usuario=dados;
+      this.isLoggedIn=true;
+      //console.log(this.usuario);
+  })
 
-  constructor(
-    private storageService: StorageService,
-    private authService: AuthService,
-    private eventBusService: EventBusService
-  ) {}
+  }
 
   toogleSideBar(){
     this.sidebarOpen=this.sidebarOpen ? false:true;
   }
 
   ngOnInit(): void {
-    this.isLoggedIn = this.storageService.isLoggedIn();
+    alert('Página sendo carregada');
 
-    if (this.isLoggedIn) {
-      const user = this.storageService.getUser();
-    }
-
-    this.eventBusSub = this.eventBusService.on('logout', () => {
-      this.logout();
-    });
   }
     
 
   
   logout(): void {
-    this.authService.logout().subscribe({
-      next: res => {
-        console.log(res);
-        this.storageService.clean();
-
-        window.location.reload();
-      },
-      error: err => {
-        console.log(err);
-      }
-    });
-  
+    
   }
   
   

@@ -18,10 +18,17 @@ let LISTA_CONTRATOS: Contrato[]= [
 export class ContratosComponent {
 
   contratos: Contrato[]=[]
+  totalContratos: Number=0;
+  valorTotal: number=0;
 
   constructor(private contratosService:ContratosService){
     this.contratosService.listarContratos().subscribe((dados:Contrato[])=>{
         this.contratos=dados;
+        this.totalContratos=dados.length;
+        this.contratos.forEach(element => {
+          console.log(this.valorTotal + "" + element.valor);
+          this.valorTotal = this.valorTotal+element.valor;
+        });
         this.tabelaContratos=new MatTableDataSource(this.contratos);
         this.tabelaContratos.paginator=this.paginator;
         this.tabelaContratos.sort=this.sort;
@@ -40,6 +47,7 @@ export class ContratosComponent {
     selectHandler(row:Contrato){
       this.selection.toggle(row as never);
     }
+    
 
     
 
